@@ -46,6 +46,6 @@ deployment:
       - docker push smizy/nodejs:${TAG}
       - docker push smizy/nodejs:${TAG_MINOR}
       - docker push smizy/nodejs:${TAG_MAJOR}
-#      - docker push smizy/nodejs:latest
+      - docker push smizy/nodejs:latest
       - docker logout
       - curl -X POST 'https://hooks.microbadger.com/images/smizy/nodejs/kt4cBzU-RiGizff2lIWPLX61Dz8='
