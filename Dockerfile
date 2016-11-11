@@ -15,12 +15,20 @@ LABEL \
     org.label-schema.vcs-type="Git" \
     org.label-schema.vcs-url="https://github.com/smizy/docker-nodejs"
 
+ENV YARN_HOME  /root/.yarn
+ENV PATH       $PATH:${YARN_HOME}/bin
+
 RUN set -x \
     && apk update \
     && apk --no-cache add \
+        ca-certificates \
         nodejs \
         tini \
-    && npm install --global yarn \
+        wget \
+    ## yarn
+    && wget -q -O - https://yarnpkg.com/latest.tar.gz \
+        | tar -xzf - -C /tmp \
+    && mv /tmp/dist ${YARN_HOME} \
     && adduser -D -g '' -s /sbin/nologin -u 1000 docker \
     && mkdir /code 
 
