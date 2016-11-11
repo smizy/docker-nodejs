@@ -40,7 +40,7 @@ deployment:
     owner: smizy
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-#      - docker tag smizy/nodejs:${TAG} smizy/nodejs
+      - docker tag smizy/nodejs:${TAG} smizy/nodejs
       - docker tag smizy/nodejs:${TAG} smizy/nodejs:${TAG_MINOR}
       - docker tag smizy/nodejs:${TAG} smizy/nodejs:${TAG_MAJOR}
       - docker push smizy/nodejs:${TAG}
