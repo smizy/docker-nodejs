@@ -16,7 +16,7 @@ LABEL \
     org.label-schema.vcs-url="https://github.com/smizy/docker-nodejs"
 
 ENV YARN_HOME  /root/.yarn
-ENV PATH       $PATH:${YARN_HOME}/bin
+ENV PATH       $PATH:${YARN_HOME}/bin:/code/node_modules/.bin
 
 RUN set -x \
     && apk update \
