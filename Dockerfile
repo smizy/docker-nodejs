@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.5
 MAINTAINER smizy
 
 ARG BUILD_DATE
@@ -37,4 +37,4 @@ WORKDIR /code
 
 COPY entrypoint.sh  /usr/local/bin/
 
-ENTRYPOINT ["tini", "--", "entrypoint.sh"]
+ENTRYPOINT ["/sbin/tini", "--", "entrypoint.sh"]
