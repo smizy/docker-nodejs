@@ -8,5 +8,5 @@ Node.js docker image based on alpine
 
 ```
 $ docker run --rm smizy/nodejs yarn --version
-0.24.5
+0.24.6
 ```
